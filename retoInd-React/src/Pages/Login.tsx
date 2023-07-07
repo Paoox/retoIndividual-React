@@ -38,6 +38,16 @@ export default function Login() {
           </div>
         </div>
       </nav>
+      <section className="mx-52 p-4 bg-slate-500">
+        <div className="flex flex-col justify-center items-center p-12 bg-orange-500">
+          <h1 className="text-[#171717] text-3xl font-bold">
+            Welcome to DEV Community
+          </h1>
+          <p className="text-[#404040] text-base">
+            DEV Community is a community of 1,096,406 amazing developers
+          </p>
+        </div>
+      </section>
     </main>
   );
 }
