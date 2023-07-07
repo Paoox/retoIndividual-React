@@ -1,4 +1,4 @@
-export default function NavBar() {
+export default function NavBarLogin() {
   return (
     <nav className="bg-[#FFFFFF] flex items-center w-auto h-auto px-32 gap-2 p-[6px] place-content-between">
       <div className="flex gap-1">
