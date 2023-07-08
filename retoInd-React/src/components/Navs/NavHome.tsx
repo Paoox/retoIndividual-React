@@ -5,7 +5,7 @@ import Hollow from "../../assets/hollow-knight.png";
 
 export default function NavHome() {
   return (
-    <nav className="bg-[#FFFFFF] flex items-center w-full h-auto px-32 gap-2 p-[6px] place-content-between fixed">
+    <nav className="bg-[#FFFFFF] flex items-center w-full h-auto px-32 gap-2 p-[6px] place-content-between">
       <div className="flex gap-1">
         <Link to="/">
           <img

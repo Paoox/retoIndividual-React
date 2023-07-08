@@ -1,11 +1,12 @@
 import NavHome from "../components/Navs/NavHome";
 import Footer from "../components/Footer/Footer";
+import MainHome from "../components/HomeMain/MainHome";
 
 export default function Home() {
   return (
-    <main className="bg-[#F5F5F5] min-h-screen flex flex-col text-neutral-200  relative">
+    <main className="bg-[#F5F5F5] min-h-screen flex flex-col text-neutral-200">
       <NavHome />
-      <section></section>
+      <MainHome />
       <Footer />
     </main>
   );

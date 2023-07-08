@@ -2,7 +2,7 @@ import LiFooter from "./LiFooter";
 
 export default function Footer() {
   return (
-    <footer className=" mb-2 bg-[#E5E5E5] w-auto">
+    <footer className=" mb-2 bg-[#E5E5E5] w-full h-auto">
       <div className="p-10">
         <div className="mx-48 flex  flex-col text-center">
           <p className="text-gray-500 text-[9px] ">
