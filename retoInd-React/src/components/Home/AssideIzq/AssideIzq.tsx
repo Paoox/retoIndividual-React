@@ -1,4 +1,11 @@
 import MenuAssideIzq from "./MenuAssideIzq";
+import MenuIcons from "./MenuIcons";
+import mastodon from "../../../assets/mastodon-Icon.svg";
+import twit from "../../../assets/tuwiter-Black-Icon.svg";
+import face from "../../../assets/facebock-Icon.svg";
+import git from "../../../assets/github-black.svg";
+import insta from "../../../assets/instagram-Icon.svg";
+import twitch from "../../../assets/twitch-Icon.svg";
 
 export default function AssideIzq() {
   return (
@@ -23,6 +30,16 @@ export default function AssideIzq() {
       <MenuAssideIzq icon="👍🏼" text="Code of Conduct" />
       <MenuAssideIzq icon="🤓" text="Privacy Policy" />
       <MenuAssideIzq icon="👀" text="Terms of use" />
+      <div className="p-2">
+        <div className="flex my-3 gap-1">
+          <MenuIcons icon={twit} />
+          <MenuIcons icon={face} />
+          <MenuIcons icon={git} />
+          <MenuIcons icon={insta} />
+          <MenuIcons icon={twitch} />
+          <MenuIcons icon={mastodon} />
+        </div>
+      </div>
     </aside>
   );
 }
