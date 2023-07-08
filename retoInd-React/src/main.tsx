@@ -2,22 +2,26 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./Pages/Login";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import CreateAccount from "./Pages/CreateAccount";
+import Home from "./Pages/Home";
 import "./index.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <h1>
-        Landing page <FontAwesomeIcon icon={faCoffee} />
-      </h1>
-    ),
+    element: <Home />,
   },
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/createAccount",
+    element: <CreateAccount />,
+  },
+  {
+    path: "/createPost",
+    element: <h1>Crea tu post</h1>,
   },
 ]);
 
