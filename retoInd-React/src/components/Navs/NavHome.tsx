@@ -36,7 +36,7 @@ export default function NavHome() {
         </div>
         <div className="px-4 static">
           <FontAwesomeIcon icon={faBell} style={{ color: "#C5B8FF" }} />
-          <span className="bg-red-600  text-white text-[10px] rounded-sm absolute top-1 right-[173px] ">
+          <span className="bg-red-600  text-white text-[9px] rounded-md absolute top-1 right-[173px] p-[1px] ">
             5
           </span>
         </div>
