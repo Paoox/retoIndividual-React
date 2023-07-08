@@ -18,6 +18,9 @@ import heart from "../../../assets/red-Heart-Icon.svg";
 import trumpet from "../../../assets/trumpet-Icon.svg";
 import book from "../../../assets/book-Icon.svg";
 import question from "../../../assets/question-Emoji-Icon.svg";
+import like from "../../../assets/like-Yellow-Hand-Icon.svg";
+import nerd from "../../../assets/nerd-Emoji-Icon.svg";
+import eyes from "../../../assets/surprised-Eyes-Icon.svg";
 
 export default function AssideIzq() {
   return (
@@ -39,17 +42,17 @@ export default function AssideIzq() {
           Other
         </span>
       </div>
-      <MenuAssideIzq icon="👍🏼" text="Code of Conduct" />
-      <MenuAssideIzq icon="🤓" text="Privacy Policy" />
-      <MenuAssideIzq icon="👀" text="Terms of use" />
+      <MenuAssideIzq icon={like} text="Code of Conduct" />
+      <MenuAssideIzq icon={nerd} text="Privacy Policy" />
+      <MenuAssideIzq icon={eyes} text="Terms of use" />
       <div className="p-2">
         <div className="flex my-3 gap-1">
-          <MenuIcons icon={twit} />
-          <MenuIcons icon={face} />
-          <MenuIcons icon={git} />
-          <MenuIcons icon={insta} />
-          <MenuIcons icon={twitch} />
-          <MenuIcons icon={mastodon} />
+          <MenuIcons icon={twit} name="twitter" />
+          <MenuIcons icon={face} name="facebook" />
+          <MenuIcons icon={git} name="github" />
+          <MenuIcons icon={insta} name="instagram" />
+          <MenuIcons icon={twitch} name="twitch" />
+          <MenuIcons icon={mastodon} name="mastodon" />
         </div>
       </div>
     </aside>
