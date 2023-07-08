@@ -34,8 +34,11 @@ export default function NavHome() {
             Create Post
           </Link>
         </div>
-        <div className="px-4">
+        <div className="px-4 static">
           <FontAwesomeIcon icon={faBell} style={{ color: "#C5B8FF" }} />
+          <span className="bg-red-600  text-white text-[10px] rounded-sm absolute top-1 right-[173px] ">
+            5
+          </span>
         </div>
         <div className="p-1 bg-black rounded-[50%]">
           <img src={Hollow} alt="" className="h-5" />
