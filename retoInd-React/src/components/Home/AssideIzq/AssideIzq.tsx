@@ -6,22 +6,34 @@ import face from "../../../assets/facebock-Icon.svg";
 import git from "../../../assets/github-black.svg";
 import insta from "../../../assets/instagram-Icon.svg";
 import twitch from "../../../assets/twitch-Icon.svg";
+import lgbt from "../../../assets/lgbt-Devto-Logo-Icon.svg";
+import house from "../../../assets/hoouse-Icon.svg";
+import oldDoc from "../../../assets/old-Document-Icon.svg";
+import microp from "../../../assets/microphone-Icon.svg";
+import camera from "../../../assets/video-Camera-Icon.svg";
+import tag from "../../../assets/tag-Icon.svg";
+import focus from "../../../assets/spotligth-Icon.svg";
+import bags from "../../../assets/color-Bags-Icon.svg";
+import heart from "../../../assets/red-Heart-Icon.svg";
+import trumpet from "../../../assets/trumpet-Icon.svg";
+import book from "../../../assets/book-Icon.svg";
+import question from "../../../assets/question-Emoji-Icon.svg";
 
 export default function AssideIzq() {
   return (
     <aside className="basis-1/4">
-      <MenuAssideIzq icon="🏠" text="Home" />
-      <MenuAssideIzq icon="📜" text="Listings" />
-      <MenuAssideIzq icon="🎙" text="Podcasts" />
-      <MenuAssideIzq icon="🎥" text="Videos" />
-      <MenuAssideIzq icon="🏷" text="Tags" />
-      <MenuAssideIzq icon="💡" text="FAQ" />
-      <MenuAssideIzq icon="🛍" text="Forem Shop" />
-      <MenuAssideIzq icon="❤" text="Sponsors" />
-      <MenuAssideIzq icon="🏳‍🌈" text="About" />
-      <MenuAssideIzq icon="📯" text="Contact" />
-      <MenuAssideIzq icon="📖" text="Guides" />
-      <MenuAssideIzq icon="🤔" text="Software comparisons" />
+      <MenuAssideIzq icon={house} text="Home" />
+      <MenuAssideIzq icon={oldDoc} text="Listings" />
+      <MenuAssideIzq icon={microp} text="Podcasts" />
+      <MenuAssideIzq icon={camera} text="Videos" />
+      <MenuAssideIzq icon={tag} text="Tags" />
+      <MenuAssideIzq icon={focus} text="FAQ" />
+      <MenuAssideIzq icon={bags} text="Forem Shop" />
+      <MenuAssideIzq icon={heart} text="Sponsors" />
+      <MenuAssideIzq icon={lgbt} text="About" />
+      <MenuAssideIzq icon={trumpet} text="Contact" />
+      <MenuAssideIzq icon={book} text="Guides" />
+      <MenuAssideIzq icon={question} text="Software comparisons" />
       <div className="rounded-md p-1 flex items-center">
         <span className="text-[12px] px-1 my-3 text-zinc-900 font-extrabold">
           Other
