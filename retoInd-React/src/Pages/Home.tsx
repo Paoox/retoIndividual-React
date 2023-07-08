@@ -1,6 +1,6 @@
 import NavHome from "../components/Navs/NavHome";
 import Footer from "../components/Footer/Footer";
-import MainHome from "../components/HomeMain/MainHome";
+import MainHome from "../components/Home/MainHome";
 
 export default function Home() {
   return (
