@@ -15,6 +15,11 @@ export default function AssideIzq() {
       <MenuAssideIzq icon="📯" text="Contact" />
       <MenuAssideIzq icon="📖" text="Guides" />
       <MenuAssideIzq icon="🤔" text="Software comparisons" />
+      <div className="rounded-md p-1 flex items-center">
+        <span className="text-[12px] px-1 my-3 text-zinc-900 font-extrabold">
+          Other
+        </span>
+      </div>
     </aside>
   );
 }
