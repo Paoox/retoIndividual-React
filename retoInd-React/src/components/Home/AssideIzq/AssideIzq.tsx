@@ -20,6 +20,9 @@ export default function AssideIzq() {
           Other
         </span>
       </div>
+      <MenuAssideIzq icon="👍🏼" text="Code of Conduct" />
+      <MenuAssideIzq icon="🤓" text="Privacy Policy" />
+      <MenuAssideIzq icon="👀" text="Terms of use" />
     </aside>
   );
 }
