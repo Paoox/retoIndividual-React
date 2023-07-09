@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import ButtonLogin from "./ButtonLogin";
+import ButtonLogin from "../Login/ButtonLogin";
 import github from "../../assets/github-Icon.svg";
 import forem from "../../assets/forem.svg";
 import twitter from "../../assets/tuwiter-Icon.svg";
-import UserData from "./UserData";
+import UserData from "../Login/UserData";
 
-export default function MainLogin() {
+export default function MainAccountNew() {
   return (
     <section className="mx-52 p-3  px-36">
       <div className="bg-white rounded-md p-3">
@@ -41,9 +41,9 @@ export default function MainLogin() {
             text="Sign up with Twitter"
           />
           <div className="mt-2 flex justify-center items-center">
-            <div className="border-gray-300 border w-20 h-0"></div>
-            <p className=" px-[6px] text-[7px] text-[#404040]">
-              Have a password? Continue with your email address
+            <div className="border-gray-300 border w-16 h-0"></div>
+            <p className=" px-[4px] text-[7px] text-[#404040]">
+              Do you want to create your account? enter email and password
             </p>
             <div className="border-gray-300 border w-20 h-0"></div>
           </div>
@@ -51,6 +51,7 @@ export default function MainLogin() {
         <form action="" className="items-start pt-3">
           <UserData text="Email" />
           <UserData text="Password" />
+          <UserData text="Confirm your Password" />
           <div className="flex gap-2">
             <input type="checkbox" name="" id="" />
             <p className="text-black text-[10px]">Remember me</p>
@@ -60,12 +61,9 @@ export default function MainLogin() {
               type="submit"
               className="text-white  bg-[#3b49df] hover:bg-[#1E37FF] w-full mb-1 text-[12px] p-2 rounded-md flex justify-center mt-3"
             >
-              Continue
+              Create Account
             </button>
           </Link>
-          <p className="text-[#3b49df] text-[8px] mt-3 text-center cursor-pointer">
-            I forgot my password
-          </p>
         </form>
       </div>
     </section>

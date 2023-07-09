@@ -1,12 +1,16 @@
+import { Link } from "react-router-dom";
+
 export default function NavBarLogin() {
   return (
     <nav className="bg-[#FFFFFF] flex items-center w-auto h-auto px-32 gap-2 p-[6px] place-content-between">
       <div className="flex gap-1">
-        <img
-          className="h-7"
-          src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
-          alt="DevTo"
-        />
+        <Link to="/">
+          <img
+            className="h-7"
+            src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
+            alt="DevTo"
+          />
+        </Link>
         <div className="border rounded-md w-64 max-w-xs h-7 pb-1 pl-1 hover:border-gray-400 flex justify-between">
           <input
             type="text"
@@ -20,20 +24,20 @@ export default function NavBarLogin() {
       </div>
       <div className="text-black flex">
         <div>
-          <a
-            href=""
+          <Link
+            to="/login"
             className="m-2 text-[#404040] text-[10px] hover:bg-slate-100 p-[6px] rounded-[3px]  hover:text-[#3b49df] text hover:underline "
           >
             Log in
-          </a>
+          </Link>
         </div>
         <div className=" border-[1px] border-[#3b49df] rounded-[3px] m-[1px] flex justify-center hover:bg-[#3b49df] ">
-          <a
-            href=""
+          <Link
+            to="/createAccount"
             className="m-1 text-[10px] text-[#3b49df] px-1 hover:text-white hover:underline"
           >
             Create account
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
