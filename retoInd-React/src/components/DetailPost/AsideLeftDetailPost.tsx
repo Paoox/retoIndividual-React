@@ -5,8 +5,8 @@ import dots from "../../assets/three-Dots-Icon.svg";
 
 export default function AsideLeftDetailPost() {
   return (
-    <section className=" basis-[7%] ">
-      <div className="flex px-2 py-5 flex-col gap-2 items-center text-[10px] text-[#171313] text-center  ">
+    <section className=" basis-[6%] ">
+      <div className="flex py-5 flex-col gap-2  cursor-pointer items-center text-[10px] text-[#171313] text-center  ">
         <div className="p-2">
           <img
             src={heartPlus}

@@ -10,6 +10,7 @@ import comments from "../../../assets/comments-count.svg";
 import read from "../../../assets/read.svg";
 
 export default function CardPost(props) {
+  const hashes = ["#chatgpt", "#openia"];
   const {
     imgUser,
     UserName,
@@ -42,9 +43,9 @@ export default function CardPost(props) {
           </h2>
         </Link>
         <div className="flex text-gray-800 text-[10px] gap-2">
-          <Hash hash="#news" />
-          <Hash hash="#chatgpt" />
-          <Hash hash="#openia" />
+          {hashes.map((hash, index) => {
+            return <Hash hash={hash} key={`hash-${index}`} />;
+          })}
         </div>
         <div className="flex my-2 gap-1 items-center pl-1 justify-between">
           <div className="flex">
@@ -58,19 +59,31 @@ export default function CardPost(props) {
                 {reactions}
               </p>
             </div>
-            <div className="flex p-1 hover:bg-gray-200  rounded-[4px] cursor-pointer">
-              <img src={comments} alt="comments" className="h-4" />
-              <p className=" hover:text-black  text-gray-700 text-[9px] py-[1px]">
-                {comentsNum}
-              </p>
-            </div>
+            {comentsNum ? (
+              <>
+                <div className="flex p-1 hover:bg-gray-200  rounded-[4px] cursor-pointer">
+                  <img src={comments} alt="comments" className="h-4" />
+                  <p className=" hover:text-black  text-gray-700 text-[9px] py-[1px]">
+                    {comentsNum}
+                  </p>
+                </div>
+              </>
+            ) : (
+              <></>
+            )}
           </div>
-          <div className="text-gray-700 text-[8px] gap-1 flex items-center">
-            {timeRead}
-            <div className="hover:bg-gray-200 rounded-sm p-1 cursor-pointer">
-              <img src={read} alt="read" className="h-3" />
-            </div>
-          </div>
+          {timeRead ? (
+            <>
+              <div className="text-gray-700 text-[8px] gap-1 flex items-center">
+                {timeRead}
+                <div className="hover:bg-gray-200 rounded-sm p-1 cursor-pointer">
+                  <img src={read} alt="read" className="h-3" />
+                </div>
+              </div>
+            </>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </div>
