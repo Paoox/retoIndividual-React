@@ -4,6 +4,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./Pages/Login";
 import CreateAccount from "./Pages/CreateAccount";
 import Home from "./Pages/Home";
+import PostDetail from "./Pages/PostDetail";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/detailPost",
-    element: <h1>Mira Aqui el detalle del post 👀👀👀</h1>,
+    element: <PostDetail />,
   },
 ]);
 
