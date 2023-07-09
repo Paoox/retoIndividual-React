@@ -1,3 +1,5 @@
+import CardPost from "./CardPost";
+
 export default function PostHome() {
   return (
     <main className="basis-[55%]">
@@ -19,26 +21,26 @@ export default function PostHome() {
           className="rounded-t-md cursor-pointer"
         />
       </div>
-      <div className="flex p-3 gap-1">
-        <div className="">
-          <img
-            src="https://res.cloudinary.com/practicaldev/image/fetch/s--ifX47biZ--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/682769/87fdd296-6176-41b1-86a4-740375c3e6d2.jpg"
-            alt="Image User"
-            className="rounded-full h-6"
-          />
-        </div>
-        <div className="w-full">
-          <p className="text-gray-500 text-[10px]  leading-none">
-            Pradumna Saraf
-          </p>
-          <p className="text-gray-500 text-[10px]  leading-none">
-            Jul 6 (2 days ago)
-          </p>
-          <h2 className="text-black font-bold text-lg my-2 leading-tight">
-            Renaming Git Commit Messages: A Quick and Easy Guide
-          </h2>
-        </div>
-      </div>
+      <CardPost
+        imgUser="https://res.cloudinary.com/practicaldev/image/fetch/s--ifX47biZ--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/682769/87fdd296-6176-41b1-86a4-740375c3e6d2.jpg"
+        UserName="Pradumna Saraf"
+        DatePost="Jul 6 (2 days ago)"
+        TitlePost="Renaming Git Commit Messages: A Quick and Easy Guide"
+        reactions="33 Reactions"
+        comentsNum="3 Comments"
+        timeRead="6 mins read"
+        className="rounded-b-lg"
+      />
+      <CardPost
+        imgUser="https://res.cloudinary.com/practicaldev/image/fetch/s--zSHFnyyx--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/255514/f665fcf9-9b52-41e0-b62e-7ccf8f84ef1a.jpeg"
+        UserName="Tomas Rares"
+        DatePost="Jul 7 (1 days ago)"
+        TitlePost="Why OpenAI removed Web Browsing from ChatGPT"
+        reactions="26 Reactions"
+        comentsNum="4 Comments"
+        timeRead="4 mins read"
+        className="rounded-lg"
+      />
     </main>
   );
 }
