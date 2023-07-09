@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CardPost from "./CardPost";
 
 export default function PostHome() {
@@ -15,11 +16,13 @@ export default function PostHome() {
         </div>
       </div>
       <div>
-        <img
-          src="https://res.cloudinary.com/practicaldev/image/fetch/s--BMQK5Br8--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/grzwqes0tgsuyu6l5tqm.png"
-          alt="article DevTo"
-          className="rounded-t-md cursor-pointer"
-        />
+        <Link to="/detailPost">
+          <img
+            src="https://res.cloudinary.com/practicaldev/image/fetch/s--BMQK5Br8--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/grzwqes0tgsuyu6l5tqm.png"
+            alt="article DevTo"
+            className="rounded-t-md cursor-pointer"
+          />
+        </Link>
       </div>
       <CardPost
         imgUser="https://res.cloudinary.com/practicaldev/image/fetch/s--ifX47biZ--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/682769/87fdd296-6176-41b1-86a4-740375c3e6d2.jpg"

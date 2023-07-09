@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Hash from "./Hash";
 import Emojis from "./Emojis";
 import heart from "../../../assets/red-Heart-Icon.svg";
@@ -35,9 +36,11 @@ export default function CardPost(props) {
         <p className="text-gray-500 text-[10px]  leading-none cursor-pointer">
           {DatePost}
         </p>
-        <h2 className="text-black font-bold text-lg my-2 leading-tight hover:text-sky-800 cursor-pointer">
-          {TitlePost}
-        </h2>
+        <Link to="/detailPost">
+          <h2 className="text-black font-bold text-lg my-2 leading-tight hover:text-sky-800 cursor-pointer">
+            {TitlePost}
+          </h2>
+        </Link>
         <div className="flex text-gray-800 text-[10px] gap-2">
           <Hash hash="#news" />
           <Hash hash="#chatgpt" />
