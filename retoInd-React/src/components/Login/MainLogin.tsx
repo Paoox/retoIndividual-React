@@ -1,18 +1,9 @@
-import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import ButtonLogin from "./ButtonLogin";
 import github from "../../assets/github-Icon.svg";
 import forem from "../../assets/forem.svg";
 import twitter from "../../assets/tuwiter-Icon.svg";
 import UserData from "./UserData";
-
-interface LoginData {
-  username: string;
-  password: string;
-}
 
 export default function MainLogin() {
   return (
@@ -58,20 +49,17 @@ export default function MainLogin() {
           </div>
         </div>
         <form action="" className="items-start pt-3">
-          <UserData text="Email" />
-          <UserData text="Password" />
+          <UserData />
           <div className="flex gap-2">
             <input type="checkbox" name="" id="" />
             <p className="text-black text-[10px]">Remember me</p>
           </div>
-          <Link to="/">
-            <button
-              type="submit"
-              className="text-white  bg-[#3b49df] hover:bg-[#1E37FF] w-full mb-1 text-[12px] p-2 rounded-md flex justify-center mt-3"
-            >
-              Continue
-            </button>
-          </Link>
+          <button
+            type="submit"
+            className="text-white  bg-[#3b49df] hover:bg-[#1E37FF] w-full mb-1 text-[12px] p-2 rounded-md flex justify-center mt-3"
+          >
+            Continue
+          </button>
           <p className="text-[#3b49df] text-[8px] mt-3 text-center cursor-pointer">
             I forgot my password
           </p>
