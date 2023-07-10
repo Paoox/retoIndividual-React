@@ -45,18 +45,7 @@ export default function UserData() {
 
   return (
     <>
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss={false}
-        draggable
-        pauseOnHover={false}
-        theme="colored"
-      />
+      <ToastContainer />
       <form onSubmit={handleSubmit(onSubmit)} action="submit">
         <div className="flex flex-col">
           <label htmlFor="text" className="text-black text-[12px]">

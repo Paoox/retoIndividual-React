@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 export default function NavBarLogin() {
+  const token = localStorage.getItem("token");
   return (
     <nav className="bg-[#FFFFFF] flex items-center w-auto h-auto px-32 gap-2 p-[6px] place-content-between">
       <div className="flex gap-1">
@@ -24,23 +25,44 @@ export default function NavBarLogin() {
           </span>
         </div>
       </div>
+
       <div className="text-black flex">
-        <div>
-          <Link
-            to="/login"
-            className="m-2 text-[#404040] text-[10px] hover:bg-slate-100 p-[6px] rounded-[3px]  hover:text-[#3b49df] text hover:underline "
-          >
-            Log in
-          </Link>
-        </div>
-        <div className=" border-[1px] border-[#3b49df] rounded-[3px] m-[1px] flex justify-center hover:bg-[#3b49df] ">
-          <Link
-            to="/createAccount"
-            className="m-1 text-[10px] text-[#3b49df] px-1 hover:text-white hover:underline"
-          >
-            Create account
-          </Link>
-        </div>
+        {token ? (
+          <>
+            <div className=" border-[1px] border-[#3b49df] rounded-[3px] m-[1px] flex justify-center hover:bg-[#3b49df]">
+              <Link
+                to="/createPost"
+                className="m-1 text-[10px] text-[#3b49df] px-1 hover:text-white hover:underline"
+              >
+                Create Post
+              </Link>
+            </div>
+            <div>
+              <a>
+                <img src="" />
+              </a>
+            </div>
+          </>
+        ) : (
+          <>
+            <div>
+              <Link
+                to="/login"
+                className="m-2 text-[#404040] text-[10px] hover:bg-slate-100 p-[6px] rounded-[3px]  hover:text-[#3b49df] text hover:underline "
+              >
+                Log in
+              </Link>
+            </div>
+            <div className=" border-[1px] border-[#3b49df] rounded-[3px] m-[1px] flex justify-center hover:bg-[#3b49df] ">
+              <Link
+                to="/createAccount"
+                className="m-1 text-[10px] text-[#3b49df] px-1 hover:text-white hover:underline"
+              >
+                Create account
+              </Link>
+            </div>
+          </>
+        )}
       </div>
     </nav>
   );

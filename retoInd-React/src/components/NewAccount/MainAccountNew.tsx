@@ -1,11 +1,56 @@
-import { Link } from "react-router-dom";
 import ButtonLogin from "../Login/ButtonLogin";
 import github from "../../assets/github-Icon.svg";
 import forem from "../../assets/forem.svg";
 import twitter from "../../assets/tuwiter-Icon.svg";
-import UserData from "../Login/UserData";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+interface createAccountData {
+  name: string;
+  email: string;
+  password: string;
+  profilePicture: string;
+}
 
 export default function MainAccountNew() {
+  const navigate = useNavigate();
+
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm<createAccountData>();
+
+  function onSubmit(data: createAccountData) {
+    fetch("http://localhost:8080/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: data.name,
+        email: data.email,
+        password: data.password,
+        profilePicture: data.profilePicture,
+      }),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log("response:", response);
+        if (response?.data._id) {
+          localStorage.setItem("token", response.data._id);
+          // ? const token = localStorage.getItem("token");
+          // ? localStorage.removeItem("token")
+          navigate("/");
+        } else {
+          toast.warn("Usuario no encontrado");
+        }
+      })
+      .catch(() => {
+        toast.error("Error en el fetch");
+      });
+  }
+
   return (
     <section className="mx-52 p-3  px-36">
       <div className="bg-white rounded-md p-3">
@@ -48,22 +93,82 @@ export default function MainAccountNew() {
             <div className="border-gray-300 border w-20 h-0"></div>
           </div>
         </div>
-        <form action="" className="items-start pt-3">
-          <UserData text="Email" />
-          <UserData text="Password" />
-          <UserData text="Confirm your Password" />
+        <ToastContainer />
+        <form
+          action="submit"
+          onSubmit={handleSubmit(onSubmit)}
+          className="items-start pt-3"
+        >
+          <div className="flex flex-col">
+            <label htmlFor="text" className="text-black text-[12px]">
+              Name
+            </label>
+            <input
+              type="text"
+              className="border border-x-gray-400 w-full mt-1 mb-1 text-[10px] text-black p-2 rounded-md h-7"
+              {...register("name", {
+                required: {
+                  value: true,
+                  message: "email de usuario requerido",
+                },
+              })}
+            />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="text" className="text-black text-[12px]">
+              Email
+            </label>
+            <input
+              type="email"
+              className="border border-x-gray-400 w-full mt-1 mb-1 text-[10px] text-black p-2 rounded-md h-7"
+              {...register("email", {
+                required: {
+                  value: true,
+                  message: "email de usuario requerido",
+                },
+              })}
+            />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="text" className="text-black text-[12px]">
+              Password
+            </label>
+            <input
+              type="password"
+              className="border border-x-gray-400 w-full mt-1 mb-1 text-[10px] text-black p-2 rounded-md h-7"
+              {...register("password", {
+                required: {
+                  value: true,
+                  message: "Password de usuario requerido",
+                },
+              })}
+            />
+            <div className="flex flex-col">
+              <label htmlFor="text" className="text-black text-[12px]">
+                Picture Profile
+              </label>
+              <input
+                type="text"
+                className="border border-x-gray-400 w-full mt-1 mb-1 text-[10px] text-black p-2 rounded-md h-7"
+                {...register("profilePicture", {
+                  required: {
+                    value: true,
+                    message: "email de usuario requerido",
+                  },
+                })}
+              />
+            </div>
+          </div>
           <div className="flex gap-2">
             <input type="checkbox" name="" id="" />
             <p className="text-black text-[10px]">Remember me</p>
           </div>
-          <Link to="/">
-            <button
-              type="submit"
-              className="text-white  bg-[#3b49df] hover:bg-[#1E37FF] w-full mb-1 text-[12px] p-2 rounded-md flex justify-center mt-3"
-            >
-              Create Account
-            </button>
-          </Link>
+          <button
+            type="submit"
+            className="text-white  bg-[#3b49df] hover:bg-[#1E37FF] w-full mb-1 text-[12px] p-2 rounded-md flex justify-center mt-3"
+          >
+            Create Account
+          </button>
         </form>
       </div>
     </section>
