@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import ButtonLogin from "./ButtonLogin";
 import github from "../../assets/github-Icon.svg";
 import forem from "../../assets/forem.svg";
@@ -48,14 +47,14 @@ export default function MainLogin() {
             <div className="border-gray-300 border w-20 h-0"></div>
           </div>
         </div>
-        <form action="" className="items-start pt-3">
+        <form action="submit" className="items-start pt-3">
           <UserData />
           <div className="flex gap-2">
-            <input type="checkbox" name="" id="" />
+            <input type="checkbox" />
             <p className="text-black text-[10px]">Remember me</p>
           </div>
           <button
-            type="submit"
+            type=""
             className="text-white  bg-[#3b49df] hover:bg-[#1E37FF] w-full mb-1 text-[12px] p-2 rounded-md flex justify-center mt-3"
           >
             Continue
