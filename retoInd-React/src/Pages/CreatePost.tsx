@@ -1,9 +1,11 @@
 import NavCreatedPost from "../components/CreatedPost/NavCreatedPost";
+import ContentCreatePost from "../components/CreatedPost/ContentCreatePost";
+
 export default function CreatePost() {
   return (
-    <section>
+    <main className="bg-[#F5F5F5] min-h-screen flex flex-col ">
       <NavCreatedPost />
-      <div className="flex px-32 gap-3 my-3">main</div>
-    </section>
+      <ContentCreatePost />
+    </main>
   );
 }
