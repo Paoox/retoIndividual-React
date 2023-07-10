@@ -1,9 +1,18 @@
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import ButtonLogin from "./ButtonLogin";
 import github from "../../assets/github-Icon.svg";
 import forem from "../../assets/forem.svg";
 import twitter from "../../assets/tuwiter-Icon.svg";
 import UserData from "./UserData";
+
+interface LoginData {
+  username: string;
+  password: string;
+}
 
 export default function MainLogin() {
   return (
