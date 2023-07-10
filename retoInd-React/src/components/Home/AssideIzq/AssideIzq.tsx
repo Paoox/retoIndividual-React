@@ -80,8 +80,8 @@ export default function AssideIzq() {
           Join our newsletter community and never miss a beat.
         </p>
       </div>
-      <div className="bg-white rounded-md p-2">
-        <div className="flex gap-[38%] py-2">
+      <div className="bg-white rounded-md p-2 my-2">
+        <div className="flex justify-between py-2">
           <p className="text-zinc-600 text-[9px] ">DEV community</p>
           <img src={dots} alt="three dots" className="h-4" />
         </div>
