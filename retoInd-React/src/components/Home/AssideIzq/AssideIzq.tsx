@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import MenuAssideIzq from "./MenuAssideIzq";
 import MenuIcons from "./MenuIcons";
 import mastodon from "../../../assets/mastodon-Icon.svg";
@@ -99,6 +100,23 @@ export default function AssideIzq() {
             {">"}Shop Forem, DEV, and CodeNewbie merch
           </code>
         </p>
+      </div>
+
+      <div className="bg-white rounded-md p-2 my-2">
+        <div className="flex justify-between py-2">
+          <p className="text-zinc-600 text-[9px] ">DEV community</p>
+          <img src={dots} alt="three dots" className="h-4" />
+        </div>
+        <Link to="/login">
+          <button className="bg-blue-800 hover:bg-blue-900 w-full rounded text-xs font-semibold p-1 my-2">
+            Login
+          </button>
+        </Link>
+        <Link to="/createAccount">
+          <p className="text-black text-[10px] flex justify-center hover:text-blue-800 hover:underline">
+            Create Account
+          </p>
+        </Link>
       </div>
     </aside>
   );
