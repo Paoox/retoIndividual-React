@@ -74,7 +74,7 @@ export default function ContentCreatePost() {
         </div>
       </div>
       <div className="basis-[25%] ">
-        <div className="mt-[40%]">
+        <div className="mt-[80%]">
           <p className="text-[12px] font-bold text-gray-900 my-2">
             Writing a Great Post Title
           </p>
