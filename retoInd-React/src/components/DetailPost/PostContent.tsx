@@ -4,12 +4,14 @@ import { useEffect, useState } from "react";
 export default function PostContent() {
   const [posts, setPosts] = useState<any>([]);
   const postId = new URL(window.location.href).search.slice(1);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     fetch(`http://localhost:8080/post/${postId}`)
       .then((response) => response.json())
       .then((response) => {
         setPosts(response.data);
+        setLoading(false);
         console.log(response.data);
       })
       .catch((error) => {
@@ -19,7 +21,7 @@ export default function PostContent() {
 
   return (
     <section className=" basis-[80%]">
-      <CardPost post={posts} />
+      {loading ? <p>Loading...</p> : <CardPost post={posts} />}
       <div className="p-3 bg-white text-xs ">
         <ol className="list-decimal text-black p-3 ">
           <li className="py-2">
