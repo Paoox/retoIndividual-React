@@ -7,13 +7,15 @@ export default function NavHome() {
   return (
     <nav className="bg-[#FFFFFF] flex items-center w-full h-auto px-32 gap-2 p-[6px] place-content-between">
       <div className="flex gap-1">
-        <Link to="/">
-          <img
-            className="h-7"
-            src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
-            alt="DevTo"
-          />
-        </Link>
+        <div>
+          <Link to="/">
+            <img
+              className="h-7"
+              src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
+              alt="DevTo"
+            />
+          </Link>
+        </div>
         <div className="border rounded-md w-64 max-w-xs h-7 pb-1 pl-1 hover:border-gray-400 flex justify-between">
           <input
             type="text"
