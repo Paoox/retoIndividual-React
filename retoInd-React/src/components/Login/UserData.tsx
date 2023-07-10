@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+npmimport { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -29,13 +29,13 @@ export default function UserData() {
       .then((response) => response.json())
       .then((response) => {
         console.log("response:", response);
-        if (response?.data) {
-          localStorage.setItem("token", response.data);
+        if (response?.data._id) {
+          localStorage.setItem("token", response.data._id);
           // ? const token = localStorage.getItem("token");
           // ? localStorage.removeItem("token")
           navigate("/");
         } else {
-          toast.warn("No se encontro al usuario");
+          toast.warning("No se encontro al usuario");
         }
       })
       .catch(() => {
@@ -46,7 +46,7 @@ export default function UserData() {
   return (
     <>
       <ToastContainer />
-      <form onSubmit={handleSubmit(onSubmit)} action="submit">
+      <form action="submit" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col">
           <label htmlFor="text" className="text-black text-[12px]">
             Email

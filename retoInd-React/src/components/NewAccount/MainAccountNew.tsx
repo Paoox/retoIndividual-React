@@ -109,7 +109,7 @@ export default function MainAccountNew() {
               {...register("name", {
                 required: {
                   value: true,
-                  message: "email de usuario requerido",
+                  message: " El nombre de usuario requerido",
                 },
               })}
             />
@@ -153,7 +153,7 @@ export default function MainAccountNew() {
                 {...register("profilePicture", {
                   required: {
                     value: true,
-                    message: "email de usuario requerido",
+                    message: "imagen de usuario requerido",
                   },
                 })}
               />
