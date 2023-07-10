@@ -5,6 +5,7 @@ import Login from "./Pages/Login";
 import CreateAccount from "./Pages/CreateAccount";
 import Home from "./Pages/Home";
 import PostDetail from "./Pages/PostDetail";
+import CreatePost from "./Pages/CreatePost";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/createPost",
-    element: <h1>Crea tu post</h1>,
+    element: <CreatePost />,
   },
   {
     path: "/detailPost",

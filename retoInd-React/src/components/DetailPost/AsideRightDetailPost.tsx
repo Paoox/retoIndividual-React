@@ -27,7 +27,7 @@ export default function AsideRightDetailPost() {
           stronger? The code that powers DEV is called Forem and is freely
           available on GitHub. You're welcome to jump in!
         </p>
-        <button className="text-[9px] p-[6px] text-gray-500 border border-slate-600 w-full rounded-sm">
+        <button className="text-[9px] p-[6px] text-gray-500 border border-slate-600 w-full rounded-md">
           Contribute to Forem
         </button>
       </div>
