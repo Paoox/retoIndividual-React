@@ -26,7 +26,7 @@ const router = createBrowserRouter([
     element: <CreatePost />,
   },
   {
-    path: "/detailPost",
+    path: "/detailPost?",
     element: <PostDetail />,
   },
 ]);
