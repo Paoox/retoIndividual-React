@@ -29,8 +29,6 @@ export interface PostProps {
 }
 
 export default function CardPost(post: PostProps) {
-  const hashes = ["#chatgpt", "#openia"];
-
   return (
     <>
       <Link to={`/detailPost?${post.post._id}`}>
@@ -57,9 +55,7 @@ export default function CardPost(post: PostProps) {
             </h2>
           </Link>
           <div className="flex text-gray-800 text-[10px] gap-2">
-            {hashes.map((hash, index) => {
-              return <Hash hash={hash} key={`hash-${index}`} />;
-            })}
+            {post.post.tags}
           </div>
           <div className="flex my-2 gap-1 items-center pl-1 justify-between">
             <div className="flex">
