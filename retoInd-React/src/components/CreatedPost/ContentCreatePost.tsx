@@ -62,8 +62,8 @@ export default function ContentCreatePost() {
             <textarea
               name=""
               id=""
-              cols="80"
-              rows="5"
+              cols={80}
+              rows={5}
               className="border border-gray-500"
               placeholder="Escribe aqui tu Post"
               {...register("text area", {

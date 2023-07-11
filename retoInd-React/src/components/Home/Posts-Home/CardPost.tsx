@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Hash from "./Hash";
 import Emojis from "./Emojis";
 import heart from "../../../assets/red-Heart-Icon.svg";
 import unicorn from "../../../assets/unicorn-Icon.svg";
