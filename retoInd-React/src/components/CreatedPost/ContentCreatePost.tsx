@@ -6,11 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 export default function ContentCreatePost() {
   const navigate = useNavigate();
 
-  const {
-    handleSubmit,
-    register,
-    formState: { errors },
-  } = useForm();
+  const { handleSubmit, register } = useForm();
 
   function onSubmit(data) {
     fetch("http://localhost:8080/post", {

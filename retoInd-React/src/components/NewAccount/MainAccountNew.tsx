@@ -17,11 +17,7 @@ interface createAccountData {
 export default function MainAccountNew() {
   const navigate = useNavigate();
 
-  const {
-    handleSubmit,
-    register,
-    formState: { errors },
-  } = useForm<createAccountData>();
+  const { handleSubmit, register } = useForm<createAccountData>();
 
   function onSubmit(data: createAccountData) {
     fetch("http://localhost:8080/", {

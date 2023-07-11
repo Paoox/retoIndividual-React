@@ -15,11 +15,7 @@ interface LoginData {
 export default function MainLogin() {
   const navigate = useNavigate();
 
-  const {
-    handleSubmit,
-    register,
-    formState: { errors },
-  } = useForm<LoginData>();
+  const { handleSubmit, register } = useForm<LoginData>();
 
   function onSubmit(data: LoginData) {
     fetch("http://localhost:8080/auth", {
