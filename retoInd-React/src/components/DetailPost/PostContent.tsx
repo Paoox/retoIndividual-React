@@ -1,22 +1,27 @@
 import CardPost from "../Home/Posts-Home/CardPost";
+import { useEffect, useState } from "react";
 
 export default function PostContent() {
+  const [posts, setPosts] = useState<any>([]);
+  const postId = new URL(window.location.href).search.slice(1);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    fetch(`http://localhost:8080/post/${postId}`)
+      .then((response) => response.json())
+      .then((response) => {
+        setPosts(response.data);
+        setLoading(false);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log("error", error);
+      });
+  }, []);
+
   return (
     <section className=" basis-[80%]">
-      <div>
-        <img
-          src="https://res.cloudinary.com/practicaldev/image/fetch/s--ToZbxUFF--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9gl6twd8r59cvwqlllw7.jpg"
-          alt="aiticle-DevTo"
-          className="rounded-t-lg"
-        />
-      </div>
-      <CardPost
-        imgUser="https://res.cloudinary.com/practicaldev/image/fetch/s--maG37Ov1--/c_fill,f_auto,fl_progressive,h_50,q_auto,w_50/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/1/9a7650bd-c94f-4330-b5af-ef29fbec1a39.jpg"
-        UserName="Sloan the DEV Moderador"
-        DatePost="Posted on Jul 6"
-        TitlePost="Welcome Thread - v232"
-        reactions="18 Reactions"
-      />
+      {loading ? <p>Loading...</p> : <CardPost post={posts} />}
       <div className="p-3 bg-white text-xs ">
         <ol className="list-decimal text-black p-3 ">
           <li className="py-2">

@@ -1,7 +1,18 @@
-import { Link } from "react-router-dom";
 import CardPost from "./CardPost";
+import { useEffect, useState } from "react";
 
 export default function PostHome() {
+  const [posts, setPosts] = useState<any>([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/post")
+      .then((response) => response.json())
+      .then((response) => setPosts(response.data))
+      .catch((error) => {
+        console.log("error", error);
+      });
+  }, []);
+
   return (
     <main className="basis-[55%]">
       <div className="flex text-xs gap-1 m-1">
@@ -15,35 +26,10 @@ export default function PostHome() {
           Top
         </div>
       </div>
-      <div>
-        <Link to="/detailPost">
-          <img
-            src="https://res.cloudinary.com/practicaldev/image/fetch/s--BMQK5Br8--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/grzwqes0tgsuyu6l5tqm.png"
-            alt="article DevTo"
-            className="rounded-t-md cursor-pointer"
-          />
-        </Link>
-      </div>
-      <CardPost
-        imgUser="https://res.cloudinary.com/practicaldev/image/fetch/s--ifX47biZ--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/682769/87fdd296-6176-41b1-86a4-740375c3e6d2.jpg"
-        UserName="Pradumna Saraf"
-        DatePost="Jul 6 (2 days ago)"
-        TitlePost="Renaming Git Commit Messages: A Quick and Easy Guide"
-        reactions="33 Reactions"
-        comentsNum="3 Comments"
-        timeRead="6 mins read"
-        className="rounded-b-lg"
-      />
-      <CardPost
-        imgUser="https://res.cloudinary.com/practicaldev/image/fetch/s--zSHFnyyx--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/255514/f665fcf9-9b52-41e0-b62e-7ccf8f84ef1a.jpeg"
-        UserName="Tomas Rares"
-        DatePost="Jul 7 (1 days ago)"
-        TitlePost="Why OpenAI removed Web Browsing from ChatGPT"
-        reactions="26 Reactions"
-        comentsNum="4 Comments"
-        timeRead="4 mins read"
-        className="rounded-lg"
-      />
+      <div></div>
+      {posts.map((post, index) => (
+        <CardPost key={`index${index}`} post={post} />
+      ))}
     </main>
   );
 }
