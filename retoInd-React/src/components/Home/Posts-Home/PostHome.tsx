@@ -14,7 +14,7 @@ export default function PostHome() {
   }, []);
 
   return (
-    <main className="basis-[55%]">
+    <main className="w-full">
       <div className="flex text-xs gap-1 m-1">
         <div className="font-bold text-black hover:bg-white hover:rounded-md hover:text-blue-800 cursor-pointer p-2">
           Relevant

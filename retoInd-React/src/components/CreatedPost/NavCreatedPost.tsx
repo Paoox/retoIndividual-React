@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function NavCreatedPost() {
   return (
-    <nav className="bg-[#F5f5f5] flex items-center w-auto h-auto px-32 gap-2 p-[6px] place-content-between">
+    <nav className="bg-[#F5f5f5] flex items-center w-auto h-auto lg:px-32 gap-2 p-[6px] place-content-between">
       <div className="flex gap-1">
         <div>
           <Link to="/">

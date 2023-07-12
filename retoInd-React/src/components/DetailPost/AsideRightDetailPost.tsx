@@ -3,7 +3,7 @@ import dots from "../../assets/three-Dots-Icon.svg";
 
 export default function AsideRightDetailPost() {
   return (
-    <section className=" basis-[30%]">
+    <section className="hidden lg:flex flex-col basis-[30%]">
       <div className="bg-white rounded-md p-3 border-t-black border-t-[25px] relative">
         <div className="flex gap-1 items-end absolute top-[-14px]">
           <img

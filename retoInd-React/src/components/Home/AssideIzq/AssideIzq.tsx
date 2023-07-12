@@ -27,7 +27,7 @@ import dots from "../../../assets/three-Dots-Icon.svg";
 
 export default function AssideIzq() {
   return (
-    <aside className="basis-1/5">
+    <aside className="hidden md:flex flex-col basis-1/5 ">
       <MenuAssideIzq icon={house} text="Home" />
       <MenuAssideIzq icon={oldDoc} text="Listings" />
       <MenuAssideIzq icon={microp} text="Podcasts" />

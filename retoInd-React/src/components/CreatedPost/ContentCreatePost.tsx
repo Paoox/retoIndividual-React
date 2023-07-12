@@ -37,10 +37,9 @@ export default function ContentCreatePost() {
   }
 
   return (
-    <section className="flex px-32 gap-3 ">
-      <div className="basis-[5%]"></div>
+    <section className="flex lg:px-32 gap-3 ">
       <form action="submit" onSubmit={handleSubmit(onSubmit)}>
-        <div className="basis-[70%] bg-white rounded-md py-3">
+        <div className=" lg:basis-[70%] bg-white rounded-md py-3">
           <div className="flex-auto px-3">
             <p className="text-[12px] font-bold">Titulo del Post</p>
             <input
@@ -58,9 +57,9 @@ export default function ContentCreatePost() {
             <textarea
               name=""
               id=""
-              cols={80}
+              cols={35}
               rows={5}
-              className="border border-gray-500"
+              className="border"
               placeholder="Escribe aqui tu Post"
               {...register("text area", {
                 required: {
@@ -141,7 +140,7 @@ export default function ContentCreatePost() {
           </div>
         </div>
       </form>
-      <div className="basis-[25%] ">
+      <div className="hidden md:flex md:basis-[25%] ">
         <div className="mt-[80%]">
           <p className="text-[12px] font-bold text-gray-900 my-2">
             Writing a Great Post Title

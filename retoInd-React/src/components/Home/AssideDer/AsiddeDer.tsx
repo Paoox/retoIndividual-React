@@ -2,7 +2,7 @@ import Listings from "./Listings";
 
 export default function AssideDer() {
   return (
-    <aside className="basis-[27%]">
+    <aside className="hidden lg:flex flex-col basis-[27%]">
       <div className="bg-white rounded-md mb-3">
         <div className="flex justify-between border-b border-zinc-200 p-3 items-center ">
           <p className="text-black font-bold text-xs">Listings</p>

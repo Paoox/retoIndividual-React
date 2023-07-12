@@ -20,7 +20,7 @@ export default function PostContent() {
   }, []);
 
   return (
-    <section className=" basis-[80%]">
+    <section className=" lg:basis-[80%]">
       {loading ? <p>Loading...</p> : <CardPost post={posts} />}
       <div className="p-3 bg-white text-xs ">
         <ol className="list-decimal text-black p-3 ">

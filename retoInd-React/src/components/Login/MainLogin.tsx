@@ -44,7 +44,7 @@ export default function MainLogin() {
   }
 
   return (
-    <section className="mx-52 p-3  px-36">
+    <section className="lg:mx-52 lg:px-36  p-3 ">
       <div className="bg-white rounded-md p-3">
         <div className="flex flex-col justify-center items-center ">
           <h1 className="text-[#171717] text-[18px] font-bold">
