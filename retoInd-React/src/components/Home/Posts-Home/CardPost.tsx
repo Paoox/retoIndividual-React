@@ -28,6 +28,12 @@ export interface PostProps {
 }
 
 export default function CardPost(post: PostProps) {
+  function getRandom() {
+    const init = 1;
+    const finaly = 40;
+    const numRandom = init + Math.floor(Math.random() * finaly);
+    return numRandom;
+  }
   return (
     <>
       <Link to={`/detailPost?${post.post._id}`}>
@@ -65,13 +71,13 @@ export default function CardPost(post: PostProps) {
                 <Emojis emoji={hands} name="hands" />
                 <Emojis emoji={fire} name="fire" />
                 <p className="hover:text-black text-gray-700 text-[9px] px-1">
-                  {post.post.heartReactions}
+                  {getRandom()}
                 </p>
               </div>
               <div className="flex p-1 hover:bg-gray-200  rounded-[4px] cursor-pointer">
                 <img src={comments} alt="comments" className="h-4" />
                 <p className=" hover:text-black  text-gray-700 text-[9px] py-[1px]">
-                  16 comments
+                  {getRandom()}
                 </p>
               </div>
             </div>

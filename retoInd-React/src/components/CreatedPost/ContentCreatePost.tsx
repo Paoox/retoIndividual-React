@@ -1,158 +1,150 @@
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
+import Hashtags from "./Hashtags";
+import linkMini from "../../assets/link-minimalistic.svg";
+import clip from "../../assets/clip-board.svg";
+import checkList from "../../assets/check-list.svg";
+import quote from "../../assets/quote.webp";
+import galeryWide from "../../assets/galeryWide.svg";
 
-export default function ContentCreatePost() {
-  const navigate = useNavigate();
+interface PostData {
+  userCreatorId: string;
+  title: string;
+  content: string;
+  image: string;
+  time: number;
+  tags: [string];
+  date: string;
+  heartReactions: number;
+}
 
-  const { handleSubmit, register } = useForm();
+export default function Create() {
+  const [reactionsCount, setReactionsCount] = useState(0);
+  const [tagsCount, setTagsCount] = useState();
 
-  function onSubmit(data) {
+  function onSubmit(data: PostData) {
+    console.log("data", data);
+    const userToken = localStorage.getItem("token");
+    const payload = userToken.split(".")[1];
+    const idUser = JSON.parse(atob(payload)).id;
+    console.log("esto es el id?", idUser);
+    const currentDate = new Date();
     fetch("http://localhost:8080/post", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${userToken}`,
+      },
       body: JSON.stringify({
+        userCreatorId: idUser,
         title: data.title,
         content: data.content,
         image: data.image,
         time: data.time,
         tags: data.tags,
+        date: currentDate.toISOString(),
+        heartReactions: reactionsCount,
       }),
     })
-      .then((res) => res.json())
-      .then((res) => {
-        console.log("response: ", res);
-        if (res?.token) {
-          localStorage.setItem("token", res.token);
-          /* const token = localStorage.getItem("token"); */
-          navigate("/dashboard");
-        } else {
-          toast.error("token no encontrado");
-        }
+      .then((response) => {
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 1000);
       })
-      .catch(() => {
-        toast.error("A donde cainal, no pasas prro");
+      .catch((error) => {
+        alert(error);
       });
   }
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<PostData>();
+
   return (
-    <section className="flex lg:px-32 gap-3 ">
-      <form action="submit" onSubmit={handleSubmit(onSubmit)}>
-        <div className=" lg:basis-[70%] bg-white rounded-md py-3">
-          <div className="flex-auto px-3">
-            <p className="text-[12px] font-bold">Titulo del Post</p>
-            <input
-              type="text"
-              className=" border-gray-600 border w-full rounded"
-              {...register("Titulo", {
-                required: {
-                  value: true,
-                  message: "email de usuario requerido",
-                },
-              })}
-            />
-          </div>
-          <div className="p-3">
-            <textarea
-              name=""
-              id=""
-              cols={35}
-              rows={5}
-              className="border"
-              placeholder="Escribe aqui tu Post"
-              {...register("text area", {
-                required: {
-                  value: true,
-                  message: "email de usuario requerido",
-                },
-              })}
-            ></textarea>
-          </div>
-          <div className="flex px-3 gap-2">
-            <div className="flex-auto">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2jkk1p99Jxhrh2FyfpXVnCjO21nzque4aLg&usqp=CAU"
-                alt=""
-                className="border border-gray-500 w-full rounded-md "
+    <>
+      <main className="bg-dev-background flex flex-col justify-start items-center ">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <header className=" bg-dev-to-card-color px-7 py-3 rounded-lg">
+            <div className="input-img py-2">
+              <input
+                type="text"
+                className="w-full focus:outline-none focus:ring-0"
+                placeholder="Add a cover image..."
+                {...register("image")}
               />
-              <div className="my-2">
-                <p className="text-[12px] font-bold">Url de tu imagen</p>
+            </div>
+            <div className="title-input">
+              <input
+                type="text"
+                placeholder="New post title here..."
+                className="w-full h-16 font-extrabold text-3xl focus:outline-none focus:ring-0"
+                {...register("title")}
+              />
+            </div>
+            <div className="flex justify-around">
+              <div className="flex justify-start">
                 <input
                   type="text"
-                  className="border-gray-600 border w-full rounded"
-                  {...register("img", {
-                    required: {
-                      value: true,
-                      message: "email de usuario requerido",
-                    },
-                  })}
+                  placeholder="Add up to 4 tags"
+                  className="font-thin focus:outline-none focus:ring-0"
+                  {...register("tags")}
                 />
+                <button
+                  className="bg-blue-dev/50 text-black p-1 rounded-xl"
+                  onClick={handleSubmit(setTagsCount)}
+                >
+                  Add Tag
+                </button>
               </div>
-              <div className="">
-                <p className="text-[12px] font-bold">Titulo de tu imagen</p>
+              {tagsCount ? <Hashtags text="a" /> : <div></div>}
+              <div>
                 <input
-                  type="text"
-                  className="border-gray-600 border w-full rounded"
-                  {...register("tituloImg", {
-                    required: {
-                      value: true,
-                      message: "email de usuario requerido",
-                    },
-                  })}
+                  type="number"
+                  placeholder="Time to read"
+                  className="font-thin focus:outline-none focus:ring-0"
+                  {...register("time")}
                 />
               </div>
             </div>
-            <div className="flex-auto px-9">
-              <div className="py-2">
-                <p className="text-[12px] font-bold">Tiempo de lectura</p>
-                <input
-                  type="text"
-                  className="border-gray-600 border  rounded"
-                  {...register("time", {
-                    required: {
-                      value: true,
-                      message: "email de usuario requerido",
-                    },
-                  })}
-                />
-              </div>
-              <div className="py-2">
-                <p className="text-[12px] font-bold">Hashtags</p>
-                <input
-                  type="text"
-                  className="border-gray-600 border rounded"
-                  {...register("tags", {
-                    required: {
-                      value: true,
-                      message: "email de usuario requerido",
-                    },
-                  })}
-                />
-              </div>
-              <div className="py-2">
-                <p className="text-xs">Tus Hashtags</p>
-              </div>
-              <button className="bg-blue-700 p-2 pr-4 pl-4 rounded-md text-sm hover:bg-blue-800 text-white font-semibold">
-                Crear
-              </button>
+          </header>
+          <section className="flex flex-row max-w-lg justify-center text-center">
+            <div className="w-1/12 text-center font-bold">B</div>
+            <div className="w-1/12 text-center italic">I</div>
+            <div className="w-1/12 text-center flex">
+              <img src={linkMini} className="w-4/12 mx-4"></img>
             </div>
+            <div className="w-1/12 text-center">
+              <img src={clip} className="w-4/12 mx-4"></img>
+            </div>
+            <div className="w-1/12 text-center">
+              <img src={checkList} className="w-4/12 mx-4"></img>
+            </div>
+            <div className="w-1/12 text-center">
+              <img src={quote} className="w-4/12 mx-4"></img>
+            </div>
+            <div className="w-1/12 text-center">
+              <img src={galeryWide} className="w-4/12 mx-4"></img>
+            </div>
+            <div className="w-1/12 text-center font-bold">:</div>
+          </section>
+          <article className=" bg-dev-background ">
+            <section>
+              <textarea
+                className="w-full h-96 font-light p-2 focus:outline-none focus:ring-0"
+                {...register("content")}
+                placeholder="Write your post content here..."
+              ></textarea>
+            </section>
+          </article>
+          <div className=" text-black w-4 text-center">
+            <button type="submit" className="bg-sky-800 rounded-md p-1 text-sm">
+              Publish
+            </button>
           </div>
-        </div>
-      </form>
-      <div className="hidden md:flex md:basis-[25%] ">
-        <div className="mt-[80%]">
-          <p className="text-[12px] font-bold text-gray-900 my-2">
-            Writing a Great Post Title
-          </p>
-          <p className="text-[12px] text-gray-800">
-            Think of your post title as a super short (but compelling!)
-            description — like an overview of the actual post in one short
-            sentence. Use keywords where appropriate to help ensure people can
-            find your post by search.
-          </p>
-        </div>
-      </div>
-    </section>
+        </form>
+      </main>
+    </>
   );
 }

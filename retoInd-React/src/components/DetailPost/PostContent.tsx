@@ -1,6 +1,8 @@
 import CardPost from "../Home/Posts-Home/CardPost";
 import { useEffect, useState } from "react";
 
+export let postsData = {};
+
 export default function PostContent() {
   const [posts, setPosts] = useState<any>([]);
   const postId = new URL(window.location.href).search.slice(1);
@@ -11,8 +13,9 @@ export default function PostContent() {
       .then((response) => response.json())
       .then((response) => {
         setPosts(response.data);
+        postsData = response.data;
         setLoading(false);
-        console.log(response.data);
+        console.log("data", postsData);
       })
       .catch((error) => {
         console.log("error", error);

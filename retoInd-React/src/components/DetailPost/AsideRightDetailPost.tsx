@@ -1,5 +1,6 @@
 import Listings from "../Home/AssideDer/Listings";
 import dots from "../../assets/three-Dots-Icon.svg";
+import { postsData } from "./PostContent";
 
 export default function AsideRightDetailPost() {
   return (
@@ -7,11 +8,12 @@ export default function AsideRightDetailPost() {
       <div className="bg-white rounded-md p-3 border-t-black border-t-[25px] relative">
         <div className="flex gap-1 items-end absolute top-[-14px]">
           <img
-            src="https://res.cloudinary.com/practicaldev/image/fetch/s--h1q5i4Pl--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/1/9a7650bd-c94f-4330-b5af-ef29fbec1a39.jpg"
-            alt="DevTeam"
+            src={postsData.userCreatorId.profilePicture}
             className="h-7 rounded-sm "
           />
-          <p className="text-gray-700 text-xs font-semibold">The DEV Team</p>
+          <p className="text-gray-700 text-xs font-semibold">
+            {postsData.userCreatorId.name}
+          </p>
         </div>
         <button
           type="submit"
@@ -36,7 +38,7 @@ export default function AsideRightDetailPost() {
           <p className="text-black text-xs font-semibold">
             More from{" "}
             <span className="text-xs text-blue-800 cursor-pointer">
-              The DEV Team
+              {postsData.userCreatorId.name}
             </span>
           </p>
         </div>
@@ -54,12 +56,12 @@ export default function AsideRightDetailPost() {
         <div className="flex justify-between py-2">
           <div className="flex text-end gap-1 cursor-pointer">
             <img
-              src="https://res.cloudinary.com/practicaldev/image/fetch/s--Vryo4bG---/c_fill,f_auto,fl_progressive,h_64,q_auto,w_64/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/1/9a7650bd-c94f-4330-b5af-ef29fbec1a39.jpg"
-              alt="Dev To User"
+              src={postsData.userCreatorId.profilePicture}
+              alt="Image User"
               className="h-5 rounded-sm"
             />
             <p className="text-zinc-600 text-[9px] flex items-end ">
-              The DEV Team
+              {postsData.userCreatorId.name}
             </p>
           </div>
           <div className="hover:bg-slate-200 hover:rounded-sm cursor-pointer">

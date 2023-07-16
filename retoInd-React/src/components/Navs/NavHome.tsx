@@ -2,25 +2,24 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
 import Hollow from "../../assets/hollow-knight.png";
-import burguer from "../../assets/burger-Menu-Icon.svg";
+import Dropdown from "./Dropdown";
+import { useState } from "react";
 
 export default function NavHome() {
+  const [search, setSearch] = useState([]);
+
+  function logOut() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("id");
+    localStorage.removeItem("postId");
+  }
   return (
     <nav className="bg-[#FFFFFF] flex items-center w-full h-auto md:px-32 gap-2 p-[6px] place-content-between">
       <div className="flex gap-1">
-        <span className="leading-6 block">
-          <button
-            className="mx-2 p-2 relative inline-block md:hidden"
-            type="submit"
-          >
-            <img
-              className="w-[24px] h-[24px]"
-              src={burguer}
-              alt="Burguer menu icon"
-            />
-          </button>
-        </span>
-        <div>
+        <div className=" inline-block text-left">
+          <Dropdown />
+        </div>
+        <div className=" py-2">
           <Link to="/">
             <img
               className="h-7 max-w-full"
@@ -39,9 +38,9 @@ export default function NavHome() {
               placeholder="Search..."
               className="placeholder:text-[10px] placeholder:text-gray-700 "
             />
-            <span className="material-symbols-outlined text-black font-light text-xl hover:bg-slate-100 hover:text-blue-800 cursor-pointer pl-1 pr-6 w-6 h-[26px] hover:ring[1px] hover:rounded-md">
+            <button className="material-symbols-outlined text-black font-light text-xl hover:bg-slate-100 hover:text-blue-800 cursor-pointer pl-1 pr-6 w-6 h-[26px] hover:ring[1px] hover:rounded-md">
               search
-            </span>
+            </button>
           </form>
         </div>
       </div>
@@ -57,8 +56,21 @@ export default function NavHome() {
         <div className="mx-4 px-[3px] static hover:bg-slate-100 hover:rounded-md cursor-pointer">
           <FontAwesomeIcon icon={faBell} style={{ color: "#C5B8FF" }} />
         </div>
-        <div className="p-1 bg-black rounded-[50%] hover:bg-gray-800 cursor-pointer">
-          <img src={Hollow} alt="" className="h-5" />
+
+        <div className="dropdown p-1 bg-black rounded-[50%] hover:bg-gray-800 cursor-pointer">
+          <label tabIndex={0}>
+            <img src={Hollow} alt="" className="h-5" />
+          </label>
+          <Link to="/" onClick={logOut}>
+            <span
+              tabIndex={0}
+              className="dropdown-content right-3 menu p-[1px]  rounded-box w-6"
+            >
+              <a className="text-[10px] text-blue-800 flex p-[1px] font-bold ">
+                Logout
+              </a>
+            </span>
+          </Link>
         </div>
       </div>
     </nav>

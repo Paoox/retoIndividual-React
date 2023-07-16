@@ -35,7 +35,7 @@ export default function MainLogin() {
           // ? localStorage.removeItem("token")
           navigate("/");
         } else {
-          toast.warning("No se encontro al usuario");
+          toast.warn("No se encontro al usuario");
         }
       })
       .catch(() => {
