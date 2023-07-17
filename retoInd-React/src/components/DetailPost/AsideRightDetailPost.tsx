@@ -21,17 +21,18 @@ export default function AsideRightDetailPost() {
         console.log("error", error);
       });
   }, []);
+  console.log("ASI LLEGA EL OBJETO", postsData)
 
 
   return (
     <section className="hidden lg:flex flex-col basis-[30%]">
-      <div className="bg-white rounded-md p-3 border-t-black border-t-[25px] relative">
-        <div className="flex gap-1 items-end absolute top-[-14px]">
+      <div className="bg-white rounded-md p-3 border-t-gray-800 border-t-[25px] relative">
+        <div className="flex gap-2 items-end absolute top-[-13px]">
         {loading ? <p>Loading...</p> :  <img
             src={postsData.userCreatorId.profilePicture}
             className="h-7 rounded-sm "
            />}
-          {loading ? <p>Loading...</p> : <p className="text-gray-700 text-sm font-semibold">
+          {loading ? <p>Loading...</p> : <p className="text-gray-700 text-sm pt-2 font-semibold">
         {postsData.userCreatorId.name} 
           </p> }
         </div>

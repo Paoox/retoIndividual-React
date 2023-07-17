@@ -3,15 +3,22 @@ import { useEffect, useState } from "react";
 
 export default function PostHome() {
   const [posts, setPosts] = useState<any>([]);
+  const [text, setText] = useState("")
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     fetch("http://localhost:8080/post")
       .then((response) => response.json())
-      .then((response) => setPosts(response.data))
+      .then((response) => {
+        setPosts(response.data);
+        setLoading(false);
+      })
       .catch((error) => {
         console.log("error", error);
       });
   }, []);
+
+  const listFilter = posts.filter(posts => posts.title.toLowerCase().includes(text.toLocaleLowerCase()))
 
   return (
     <main className="w-full">
@@ -30,6 +37,7 @@ export default function PostHome() {
       {posts.map((post, index) => (
         <CardPost key={`index${index}`} post={post} />
       ))}
+     {/*  {loading ? (<p>Loading...</p>):(<CardPost post={listFilter} />)} */}
     </main>
   );
 }

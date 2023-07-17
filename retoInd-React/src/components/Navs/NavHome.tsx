@@ -3,16 +3,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
 import Hollow from "../../assets/hollow-knight.png";
 import Dropdown from "./Dropdown";
-import { useState } from "react";
+import { useState , useEffect} from "react";
+import SearchBar from "./SearchBar";
+
+let postsData= {}
+
+
 
 export default function NavHome() {
-  const [search, setSearch] = useState([]);
+  const [text, setText] = useState("")
+ 
 
   function logOut() {
     localStorage.removeItem("token");
     localStorage.removeItem("id");
     localStorage.removeItem("postId");
   }
+
+  
+  
   return (
     <nav className="bg-[#FFFFFF] flex items-center w-full h-auto md:px-10 p-[4px] place-content-between">
       <div className="flex gap-1">
@@ -28,21 +37,7 @@ export default function NavHome() {
             />
           </Link>
         </div>
-        <div className="hidden md:block py-2">
-          <form
-            action="submit"
-            className=" border rounded-lg w-80 max-w-xs h-9 pb-1 pl-1 hover:border-gray-400 flex justify-between"
-          >
-            <input
-              type="text"
-              placeholder="Search..."
-              className=" placeholder:text-gray-700 "
-            />
-            <button className="material-symbols-outlined text-black font-light text-2xl hover:bg-slate-100 hover:text-blue-800 cursor-pointer pl-1 pr-6 w-6 h-[26px] hover:ring[1px] hover:rounded-md">
-              search
-            </button>
-          </form>
-        </div>
+        <SearchBar /* text={text} setText={setText}  *//>
       </div>
       <div className="text-black flex">
         <div className=" hidden md:flex border-[1px] border-[#3b49df] rounded-lg m-[1px]  justify-center hover:bg-[#3b49df] ">
