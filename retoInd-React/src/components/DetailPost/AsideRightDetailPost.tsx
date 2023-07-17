@@ -1,6 +1,6 @@
 import Listings from "../Home/AssideDer/Listings";
 import dots from "../../assets/three-Dots-Icon.svg";
-import { postsData } from "./PostContent";
+//import { postsData } from "./PostContent";
 
 export default function AsideRightDetailPost() {
   return (
@@ -8,11 +8,11 @@ export default function AsideRightDetailPost() {
       <div className="bg-white rounded-md p-3 border-t-black border-t-[25px] relative">
         <div className="flex gap-1 items-end absolute top-[-14px]">
           <img
-            src={postsData.userCreatorId.profilePicture}
+            src=""//{postsData.userCreatorId.profilePicture}
             className="h-7 rounded-sm "
           />
           <p className="text-gray-700 text-xs font-semibold">
-            {postsData.userCreatorId.name}
+        {/* {postsData.userCreatorId.name} */}
           </p>
         </div>
         <button
@@ -38,7 +38,7 @@ export default function AsideRightDetailPost() {
           <p className="text-black text-xs font-semibold">
             More from{" "}
             <span className="text-xs text-blue-800 cursor-pointer">
-              {postsData.userCreatorId.name}
+              {/* {postsData.userCreatorId.name} */}
             </span>
           </p>
         </div>
@@ -56,12 +56,12 @@ export default function AsideRightDetailPost() {
         <div className="flex justify-between py-2">
           <div className="flex text-end gap-1 cursor-pointer">
             <img
-              src={postsData.userCreatorId.profilePicture}
+              src=""//{postsData.userCreatorId.profilePicture}
               alt="Image User"
               className="h-5 rounded-sm"
             />
             <p className="text-zinc-600 text-[9px] flex items-end ">
-              {postsData.userCreatorId.name}
+              {/* {postsData.userCreatorId.name} */}
             </p>
           </div>
           <div className="hover:bg-slate-200 hover:rounded-sm cursor-pointer">
