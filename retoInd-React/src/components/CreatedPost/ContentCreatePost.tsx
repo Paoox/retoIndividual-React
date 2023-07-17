@@ -19,7 +19,6 @@ interface PostData {
 }
 
 export default function Create() {
-  const [reactionsCount, setReactionsCount] = useState(0);
   const [tagsCount, setTagsCount] = useState();
 
   function onSubmit(data: PostData) {
@@ -43,13 +42,14 @@ export default function Create() {
         time: data.time,
         tags: data.tags,
         date: currentDate.toISOString(),
-        heartReactions: reactionsCount,
+        heartReactions: Number,
       }),
     })
       .then((response) => {
         setTimeout(() => {
           window.location.href = "/";
         }, 1000);
+        console.log(response)
       })
       .catch((error) => {
         alert(error);
@@ -61,7 +61,7 @@ export default function Create() {
     handleSubmit,
     formState: { errors },
   } = useForm<PostData>();
-
+  console.log(errors)
   return (
     <>
       <main className=" bg-transparent flex flex-col justify-start items-center ">
