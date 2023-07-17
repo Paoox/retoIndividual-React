@@ -15,7 +15,6 @@ export default function PostContent() {
         setPosts(response.data);
         postsData = response.data;
         setLoading(false);
-        console.log("data", postsData);
       })
       .catch((error) => {
         console.log("error", error);
@@ -25,8 +24,9 @@ export default function PostContent() {
   return (
     <section className=" lg:basis-[80%]">
       {loading ? <p>Loading...</p> : <CardPost post={posts} />}
-      <div className="p-3 bg-white text-xs ">
-        <ol className="list-decimal text-black p-3 ">
+      <div className="p-3 bg-white ">
+      <p className="text-black ">{postsData.content}</p>
+        <ol className="list-decimal text-black  ">
           <li className="py-2">
             Leave a comment below to introduce yourself! You can talk about what
             brought you here, what you're learning, or just a fun fact about
@@ -43,7 +43,7 @@ export default function PostContent() {
           </li>
         </ol>
         <img
-          src="https://picsum.photos/550/300"
+          src="https://picsum.photos/660/300"
           alt=""
           className="rounded-lg"
         />

@@ -51,10 +51,10 @@ export default function MainAccountNew() {
     <section className="lg:mx-52 p-3  lg:px-36">
       <div className="bg-white rounded-md p-3">
         <div className="flex flex-col justify-center items-center ">
-          <h1 className="text-[#171717] text-[18px] font-bold">
+          <h1 className="text-[#171717] text-3xl font-bold">
             Welcome to DEV Community
           </h1>
-          <p className="text-[#404040] text-[10px] mb-4">
+          <p className="text-[#404040] text-ig mb-4">
             DEV Community is a community of 1,096,406 amazing developers
           </p>
           <ButtonLogin
@@ -83,7 +83,7 @@ export default function MainAccountNew() {
           />
           <div className="mt-2 flex justify-center items-center">
             <div className="border-gray-300 border w-16 h-0"></div>
-            <p className=" px-[4px] text-[7px] text-[#404040]">
+            <p className=" px-[4px] text-xs text-[#404040]">
               Do you want to create your account? enter email and password
             </p>
             <div className="border-gray-300 border w-20 h-0"></div>
@@ -96,12 +96,12 @@ export default function MainAccountNew() {
           className="items-start pt-3"
         >
           <div className="flex flex-col">
-            <label htmlFor="text" className="text-black text-[12px]">
+            <label htmlFor="text" className="text-black">
               Name
             </label>
             <input
               type="text"
-              className="border border-x-gray-400 w-full mt-1 mb-1 text-[10px] text-black p-2 rounded-md h-7"
+              className="border border-x-gray-400 w-full mt-1 mb-1 text-black p-2 rounded-md h-9"
               {...register("name", {
                 required: {
                   value: true,
@@ -111,12 +111,12 @@ export default function MainAccountNew() {
             />
           </div>
           <div className="flex flex-col">
-            <label htmlFor="text" className="text-black text-[12px]">
+            <label htmlFor="text" className="text-black">
               Email
             </label>
             <input
               type="email"
-              className="border border-x-gray-400 w-full mt-1 mb-1 text-[10px] text-black p-2 rounded-md h-7"
+              className="border border-x-gray-400 w-full mt-1 mb-1 text-[10px] text-black p-2 rounded-md h-9"
               {...register("email", {
                 required: {
                   value: true,
@@ -126,12 +126,12 @@ export default function MainAccountNew() {
             />
           </div>
           <div className="flex flex-col">
-            <label htmlFor="text" className="text-black text-[12px]">
+            <label htmlFor="text" className="text-black">
               Password
             </label>
             <input
               type="password"
-              className="border border-x-gray-400 w-full mt-1 mb-1 text-[10px] text-black p-2 rounded-md h-7"
+              className="border border-x-gray-400 w-full mt-1 mb-1 text-[10px] text-black p-2 rounded-md h-9"
               {...register("password", {
                 required: {
                   value: true,
@@ -140,12 +140,12 @@ export default function MainAccountNew() {
               })}
             />
             <div className="flex flex-col">
-              <label htmlFor="text" className="text-black text-[12px]">
+              <label htmlFor="text" className="text-black">
                 Picture Profile
               </label>
               <input
                 type="text"
-                className="border border-x-gray-400 w-full mt-1 mb-1 text-[10px] text-black p-2 rounded-md h-7"
+                className="border border-x-gray-400 w-full mt-1 mb-1 text-[10px] text-black p-2 rounded-md h-9"
                 {...register("profilePicture", {
                   required: {
                     value: true,
@@ -157,11 +157,11 @@ export default function MainAccountNew() {
           </div>
           <div className="flex gap-2">
             <input type="checkbox" name="" id="" />
-            <p className="text-black text-[10px]">Remember me</p>
+            <p className="text-black">Remember me</p>
           </div>
           <button
             type="submit"
-            className="text-white  bg-[#3b49df] hover:bg-[#1E37FF] w-full mb-1 text-[12px] p-2 rounded-md flex justify-center mt-3"
+            className="text-white  bg-[#3b49df] hover:bg-[#1E37FF] w-full mb-1 p-2 rounded-md flex justify-center mt-3"
           >
             Create Account
           </button>

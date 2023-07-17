@@ -11,22 +11,22 @@ export default function AsideLeftDetailPost() {
     return numRandom;
   }
   return (
-    <section className="hidden md:flex flex-col basis-[6%] ">
-      <div className="flex py-5 flex-col gap-2  cursor-pointer items-center text-[10px] text-[#171313] text-center  ">
+    <section className="hidden md:flex flex-col md:basis-[11%] basis-[6%]  ">
+      <div className="flex py-5 flex-col gap-2  cursor-pointer items-center text-xs text-[#171313] text-center  ">
         <div className="p-2">
           <img
             src={heartPlus}
             alt="Heart plus"
-            className="h-4 fill-[#525252]"
+            className="h-6 fill-[#525252]"
           />
           <p>{getRandom()}</p>
         </div>
         <div className="p-2">
-          <img src={coment} alt="Comments" className="h-5 fill-[#525252]" />
+          <img src={coment} alt="Comments" className="h-8 fill-[#525252]" />
           <p>{getRandom()}</p>
         </div>
         <div className="p-2">
-          <img src={bookmark} alt="Bookmark" className="h-[13px]" />
+          <img src={bookmark} alt="Bookmark" className="h-5" />
           <p>{getRandom()}</p>
         </div>
         <div className="p-2">

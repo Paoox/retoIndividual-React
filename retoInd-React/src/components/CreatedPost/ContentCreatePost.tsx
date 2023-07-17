@@ -64,13 +64,13 @@ export default function Create() {
 
   return (
     <>
-      <main className="bg-dev-background flex flex-col justify-start items-center ">
+      <main className=" bg-transparent flex flex-col justify-start items-center ">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <header className=" bg-dev-to-card-color px-7 py-3 rounded-lg">
-            <div className="input-img py-2">
+          <header className=" md:px-7 md:py-3 rounded-lg">
+            <div className="input-img md:py-2">
               <input
                 type="text"
-                className="w-full focus:outline-none focus:ring-0"
+                className="w-full focus:outline-none focus:ring-0 bg-[#F5F5F5]"
                 placeholder="Add a cover image..."
                 {...register("image")}
               />
@@ -79,7 +79,7 @@ export default function Create() {
               <input
                 type="text"
                 placeholder="New post title here..."
-                className="w-full h-16 font-extrabold text-3xl focus:outline-none focus:ring-0"
+                className="w-full md:h-16 font-extrabold  md:text-3xl focus:outline-none focus:ring-0 bg-[#F5F5F5]"
                 {...register("title")}
               />
             </div>
@@ -88,11 +88,11 @@ export default function Create() {
                 <input
                   type="text"
                   placeholder="Add up to 4 tags"
-                  className="font-thin focus:outline-none focus:ring-0"
+                  className=" text-xs md:text:base font-thin focus:outline-none focus:ring-0 bg-[#F5F5F5]"
                   {...register("tags")}
                 />
                 <button
-                  className="bg-blue-dev/50 text-black p-1 rounded-xl"
+                  className="text-black md:p-1 rounded-xl text-xs md:text:base"
                   onClick={handleSubmit(setTagsCount)}
                 >
                   Add Tag
@@ -103,43 +103,43 @@ export default function Create() {
                 <input
                   type="number"
                   placeholder="Time to read"
-                  className="font-thin focus:outline-none focus:ring-0"
+                  className="font-thin focus:outline-none focus:ring-0 bg-[#F5F5F5]"
                   {...register("time")}
                 />
               </div>
             </div>
           </header>
-          <section className="flex flex-row max-w-lg justify-center text-center">
+          <section className="flex flex-row md:max-w-lg justify-center text-center pb-3">
             <div className="w-1/12 text-center font-bold">B</div>
             <div className="w-1/12 text-center italic">I</div>
             <div className="w-1/12 text-center flex">
-              <img src={linkMini} className="w-4/12 mx-4"></img>
+              <img src={linkMini} className="w-4/12"></img>
             </div>
-            <div className="w-1/12 text-center">
-              <img src={clip} className="w-4/12 mx-4"></img>
+            <div className="w-1/12 flex items-center">
+              <img src={clip} className="w-4/12 "></img>
             </div>
-            <div className="w-1/12 text-center">
-              <img src={checkList} className="w-4/12 mx-4"></img>
+            <div className="w-1/12 flex items-center">
+              <img src={checkList} className="w-4/12"></img>
             </div>
-            <div className="w-1/12 text-center">
-              <img src={quote} className="w-4/12 mx-4"></img>
+            <div className="w-1/12 flex items-center">
+              <img src={quote} className="w-4/12"></img>
             </div>
-            <div className="w-1/12 text-center">
-              <img src={galeryWide} className="w-4/12 mx-4"></img>
+            <div className="w-1/12 flex items-center">
+              <img src={galeryWide} className="w-4/12"></img>
             </div>
-            <div className="w-1/12 text-center font-bold">:</div>
+            <div className="w-1/12 flex items-center font-bold">:</div>
           </section>
-          <article className=" bg-dev-background ">
+          <article className="bg-[#F5F5F5]">
             <section>
               <textarea
-                className="w-full h-96 font-light p-2 focus:outline-none focus:ring-0"
+                className="md:w-full h-40 md:h-96 font-light p-2 focus:outline-none focus:ring-0 bg-[#F5F5F5]"
                 {...register("content")}
                 placeholder="Write your post content here..."
               ></textarea>
             </section>
           </article>
-          <div className=" text-black w-4 text-center">
-            <button type="submit" className="bg-sky-800 rounded-md p-1 text-sm">
+          <div className=" text-white w-4 text-center">
+            <button type="submit" className="bg-blue-600 rounded-md p-2 text-sm">
               Publish
             </button>
           </div>

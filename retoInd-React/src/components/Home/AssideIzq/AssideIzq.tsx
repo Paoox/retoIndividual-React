@@ -27,7 +27,7 @@ import dots from "../../../assets/three-Dots-Icon.svg";
 
 export default function AssideIzq() {
   return (
-    <aside className="hidden md:flex flex-col basis-1/5 ">
+    <aside className="hidden md:flex flex-col basis-1/4 ">
       <MenuAssideIzq icon={house} text="Home" />
       <MenuAssideIzq icon={oldDoc} text="Listings" />
       <MenuAssideIzq icon={microp} text="Podcasts" />
@@ -41,7 +41,7 @@ export default function AssideIzq() {
       <MenuAssideIzq icon={book} text="Guides" />
       <MenuAssideIzq icon={question} text="Software comparisons" />
       <div className=" p-1 flex items-center">
-        <span className="text-[12px] px-1 my-3 text-zinc-900 font-extrabold">
+        <span className=" px-1 my-3 text-zinc-900 font-extrabold">
           Other
         </span>
       </div>
@@ -59,42 +59,42 @@ export default function AssideIzq() {
         </div>
       </div>
       <div className="p-1 flex justify-between items-center mx-1 mb-12">
-        <span className="text-[12px] my-3 text-zinc-900 font-extrabold">
+        <span className=" my-3 text-zinc-900 font-extrabold">
           My Tags
         </span>
         <img src={settings} alt="settings" className="h-4" />
       </div>
-      <div className="bg-white rounded-md p-2">
-        <div className="flex gap-[38%] py-2">
-          <p className="text-zinc-600 text-[9px] ">DEV community</p>
-          <img src={dots} alt="three dots" className="h-4" />
+      <div className="bg-white rounded-md m-2">
+        <div className="flex justify-around my-2">
+          <p className="text-zinc-600 text-xs ">DEV community</p>
+          <img src={dots} alt="three dots" className="h-5" />
         </div>
         <img
           src="https://res.cloudinary.com/practicaldev/image/fetch/s--Iim0709g--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2tlkmy55xik6gfbcah9f.jpg"
           alt="DEV Newsletter"
-          className="rounded-[4px] pb-2 "
+          className="rounded-md pb-2 "
         />
-        <h2 className="text-[#404040] text-[14px] font-bold mr-6">
+        <h2 className="text-[#404040] text-sm font-bold mr-6">
           Want to stay ahead of the game in the world of coding?
         </h2>
-        <p className="hover:text-blue-800 text-[10px] my-2 underline text-blue-600 cursor-pointer">
+        <p className="hover:text-blue-800 text-xs my-2 underline text-blue-600 cursor-pointer">
           Join our newsletter community and never miss a beat.
         </p>
       </div>
       <div className="bg-white rounded-md p-2 my-2">
         <div className="flex justify-between py-2">
-          <p className="text-zinc-600 text-[9px] ">DEV community</p>
-          <img src={dots} alt="three dots" className="h-4" />
+          <p className="text-zinc-600 text-xs ">DEV community</p>
+          <img src={dots} alt="three dots" className="h-5" />
         </div>
         <img
           src="https://res.cloudinary.com/practicaldev/image/fetch/s--vf_P4FwD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://p32.f1.n0.cdn.getcloudapp.com/items/OAu6mnD1/20ada628-9434-4772-a8e0-7d861713d3c4.jpg"
           alt="Dev Forem"
           className="rounded-md my-2"
         />
-        <h2 className="text-[#404040] text-[14px] font-bold mr-6 my-2">
+        <h2 className="text-[#404040] text-sm font-bold mr-6 my-2">
           The Forem Shop is Here!
         </h2>
-        <p className="hover:text-blue-800 text-[10px] underline text-blue-600 cursor-pointer">
+        <p className="hover:text-blue-800 text-xs underline text-blue-600 cursor-pointer">
           <code>
             {">"}
             {">"}Shop Forem, DEV, and CodeNewbie merch
@@ -104,16 +104,16 @@ export default function AssideIzq() {
 
       <div className="bg-white rounded-md p-2 my-2">
         <div className="flex justify-between py-2">
-          <p className="text-zinc-600 text-[9px] ">DEV community</p>
-          <img src={dots} alt="three dots" className="h-4" />
+          <p className="text-zinc-600 text-sm ">DEV community</p>
+          <img src={dots} alt="three dots" className="h-5" />
         </div>
         <Link to="/login">
-          <button className="bg-blue-800 hover:bg-blue-900 w-full rounded text-xs font-semibold p-1 my-2">
+          <button className="bg-blue-800 hover:bg-blue-900 w-full rounded text-xs font-semibold p-2 my-2">
             Login
           </button>
         </Link>
         <Link to="/createAccount">
-          <p className="text-black text-[10px] flex justify-center hover:text-blue-800 hover:underline">
+          <p className="text-black text-sm flex justify-center hover:text-blue-800 hover:underline">
             Create Account
           </p>
         </Link>
